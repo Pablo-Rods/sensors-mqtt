@@ -44,8 +44,8 @@ class Sender:
             # Realizar petición HTTP
             headers = {'Content-Type': 'application/json'}
             response = requests.post(
-                self.url, json=data, headers=headers, timeout=10)
-            response.raise_for_status()  # Lanza excepción si hay error HTTP
+                self.url, json=data, headers=headers, timeout=10, verify=False)
+            # response.raise_for_status()  # Lanza excepción si hay error HTTP
 
             return response.text
 
